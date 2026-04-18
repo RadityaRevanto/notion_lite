@@ -22,18 +22,38 @@
             </li>
 
             <!-- Dashboard -->
-            <li class="mt-2">
+            <!-- <li class="mt-2">
                 <a href="{{ route('dashboard') }}" class="{{ request()->routeIs('dashboard') ? 'bg-primary/10 text-primary border-l-2 border-primary -ml-[1px]' : 'hover:bg-base-300/50 text-base-content/80' }} py-2 text-base flex items-center gap-2 rounded-r-lg transition-colors">
                     <svg class="w-5 h-5 {{ request()->routeIs('dashboard') ? '' : 'opacity-60' }}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                     </svg>
                     <span class="{{ request()->routeIs('dashboard') ? 'font-medium' : '' }}">Dashboard</span>
                 </a>
+            </li> -->
+
+                        <!-- Dashboard -->
+            <li class="mt-2">
+                <a href="{{ route('master-tutorial') }}" class="{{ request()->routeIs('master-tutorial') ? 'bg-primary/10 text-primary border-l-2 border-primary -ml-[1px]' : 'hover:bg-base-300/50 text-base-content/80' }} py-2 text-base flex items-center gap-2 rounded-r-lg transition-colors">
+                    <svg class="w-5 h-5 {{ request()->routeIs('master-tutorial') ? '' : 'opacity-60' }}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    <span class="{{ request()->routeIs('master-tutorial') ? 'font-medium' : '' }}">Master Tutorial</span>
+                </a>
+            </li>
+
+                        <!-- Dashboard -->
+            <li class="mt-2">
+                <a href="{{ route('mata-kuliah') }}" class="{{ request()->routeIs('mata-kuliah') ? 'bg-primary/10 text-primary border-l-2 border-primary -ml-[1px]' : 'hover:bg-base-300/50 text-base-content/80' }} py-2 text-base flex items-center gap-2 rounded-r-lg transition-colors">
+                    <svg class="w-5 h-5 {{ request()->routeIs('mata-kuliah') ? '' : 'opacity-60' }}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    <span class="{{ request()->routeIs('mata-kuliah') ? 'font-medium' : '' }}">Mata Kuliah</span>
+                </a>
             </li>
             
             <!-- Projects -->
-            <li>
-                <details {{ request()->routeIs('roadmap', 'meeting-notes', 'objectives') ? 'open' : '' }}>
+            <!-- <li>
+                <details {{ request()->routeIs('master-tutorial', 'meeting-notes', 'objectives') ? 'open' : '' }}>
                     <summary class="hover:bg-base-300/50 py-2 text-base">
                         <svg class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/>
@@ -43,35 +63,30 @@
 
                     <ul class="ml-3 pl-3 border-l border-base-300/50 space-y-1 mt-1">
                         <li>
-                            <a href="{{ route('roadmap') }}" class="{{ request()->routeIs('roadmap') ? 'active bg-primary/10 text-primary border-l-2 border-primary -ml-[13px] rounded-none rounded-r-lg font-medium' : 'hover:bg-base-300/50 opacity-80 hover:opacity-100 -ml-[11px]' }} py-2 text-base transition-colors">
-                                🚀 Roadmap 2026
+                            <a href="{{ route('master-tutorial') }}" class="{{ request()->routeIs('master-tutorial') ? 'active bg-primary/10 text-primary border-l-2 border-primary -ml-[13px] rounded-none rounded-r-lg font-medium' : 'hover:bg-base-300/50 opacity-80 hover:opacity-100 -ml-[11px]' }} py-2 text-base transition-colors">
+                                Master Tutorial
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('meeting-notes') }}" class="{{ request()->routeIs('meeting-notes') ? 'active bg-primary/10 text-primary border-l-2 border-primary -ml-[13px] rounded-none rounded-r-lg font-medium' : 'hover:bg-base-300/50 opacity-80 hover:opacity-100 -ml-[11px]' }} py-2 text-base transition-colors">
-                                📝 Meeting Notes
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('objectives') }}" class="{{ request()->routeIs('objectives') ? 'active bg-primary/10 text-primary border-l-2 border-primary -ml-[13px] rounded-none rounded-r-lg font-medium' : 'hover:bg-base-300/50 opacity-80 hover:opacity-100 -ml-[11px]' }} py-2 text-base transition-colors">
-                                🎯 Objectives
+                            <a href="{{ route('mata-kuliah') }}" class="{{ request()->routeIs('mata-kuliah') ? 'active bg-primary/10 text-primary border-l-2 border-primary -ml-[13px] rounded-none rounded-r-lg font-medium' : 'hover:bg-base-300/50 opacity-80 hover:opacity-100 -ml-[11px]' }} py-2 text-base transition-colors">
+                                Mata Kuliah
                             </a>
                         </li>
                     </ul>
                 </details>
-            </li>
+            </li> -->
 
             <div class="divider my-2 px-2 h-0 opacity-50"></div>
 
             <!-- Trash -->
-            <li>
+            <!-- <li>
                 <a href="{{ route('trash') }}" class="{{ request()->routeIs('trash') ? 'bg-error/10 text-error border-l-2 border-error -ml-[1px]' : 'hover:bg-error/10 hover:text-error text-base-content/70' }} transition-colors py-2 text-base flex items-center gap-2 rounded-r-lg">
                     <svg class="w-5 h-5 {{ request()->routeIs('trash') ? '' : 'opacity-60' }}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
                     </svg>
                     <span class="{{ request()->routeIs('trash') ? 'font-medium' : '' }}">Trash</span>
                 </a>
-            </li>
+            </li> -->
 
         </ul>
     </div>
@@ -98,25 +113,6 @@
             </div>
 
             <ul tabindex="0" class="dropdown-content menu p-2 shadow-xl bg-base-100 rounded-box w-full mb-2 border border-base-300 space-y-1">
-                <li>
-                    <a href="#" class="hover:bg-primary/10 hover:text-primary flex items-center gap-2 text-base">
-                        <svg class="w-5 h-5 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-                        </svg>
-                        Profile
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="hover:bg-primary/10 hover:text-primary flex items-center gap-2 text-base">
-                        <svg class="w-5 h-5 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0"/>
-                        </svg>
-                        Settings & Billing
-                    </a>
-                </li>
-
-                <div class="divider my-1"></div>
-
                 <li>
                     <a href="#" class="text-error hover:bg-error/10 flex items-center gap-2 text-base">
                         <svg class="w-5 h-5 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
