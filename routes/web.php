@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MatkulController;
 
 
 Route::middleware('guest.session')->group(function () {
@@ -25,9 +26,7 @@ Route::middleware('auth.session')->group(function () {
         return view('pages.detail_tutorial');
     })->name('detail-tutorial');
 
-    Route::get('/mata-kuliah', function () {
-        return view('pages.mata_kuliah');
-    })->name('mata-kuliah');
+    Route::get('/mata-kuliah', [MatkulController::class, 'getMatkul'])->name('mata-kuliah');
 });
 
 Route::redirect('/', '/login');

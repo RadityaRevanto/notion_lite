@@ -33,34 +33,7 @@
                     <span class="{{ request()->routeIs('mata-kuliah') ? 'font-medium' : '' }}">Mata Kuliah</span>
                 </a>
             </li>
-            
-            <!-- Projects -->
-            <!-- <li>
-                <details {{ request()->routeIs('master-tutorial', 'meeting-notes', 'objectives') ? 'open' : '' }}>
-                    <summary class="hover:bg-base-300/50 py-2 text-base">
-                        <svg class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/>
-                        </svg>
-                        <span class="font-medium text-base">Projects</span>
-                    </summary>
-
-                    <ul class="ml-3 pl-3 border-l border-base-300/50 space-y-1 mt-1">
-                        <li>
-                            <a href="{{ route('master-tutorial') }}" class="{{ request()->routeIs('master-tutorial') ? 'active bg-primary/10 text-primary border-l-2 border-primary -ml-[13px] rounded-none rounded-r-lg font-medium' : 'hover:bg-base-300/50 opacity-80 hover:opacity-100 -ml-[11px]' }} py-2 text-base transition-colors">
-                                Master Tutorial
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('mata-kuliah') }}" class="{{ request()->routeIs('mata-kuliah') ? 'active bg-primary/10 text-primary border-l-2 border-primary -ml-[13px] rounded-none rounded-r-lg font-medium' : 'hover:bg-base-300/50 opacity-80 hover:opacity-100 -ml-[11px]' }} py-2 text-base transition-colors">
-                                Mata Kuliah
-                            </a>
-                        </li>
-                    </ul>
-                </details>
-            </li> -->
-
             <div class="divider my-2 px-2 h-0 opacity-50"></div>
-            
         </ul>
     </div>
 
@@ -84,17 +57,19 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                 </svg>
             </div>
-
-            <ul tabindex="0" class="dropdown-content menu p-2 shadow-xl bg-base-100 rounded-box w-full mb-2 border border-base-300 space-y-1">
-                <li>
-                    <a href="#" class="text-error hover:bg-error/10 flex items-center gap-2 text-base">
+        <ul tabindex="0" class="dropdown-content menu p-2 shadow-xl bg-base-100 rounded-box w-full mb-2 border border-base-300 space-y-1">
+            <li>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="text-error hover:bg-error/10 flex items-center gap-2 text-base w-full text-left px-2 py-2">
                         <svg class="w-5 h-5 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4"/>
                         </svg>
                         Logout
-                    </a>
-                </li>
-            </ul>
+                    </button>
+                </form>
+            </li>
+        </ul>
         </div>
     </div>
 

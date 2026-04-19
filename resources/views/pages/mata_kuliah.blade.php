@@ -10,8 +10,7 @@
             <p class="text-sm text-base-content/60">Daftar kode dan nama mata kuliah yang tersedia.</p>
         </div>
 
-        <div class="flex items-center gap-3">
-            <!-- Search -->
+        <!-- <div class="flex items-center gap-3">
             <div class="form-control relative hidden sm:block">
                 <input type="text" placeholder="Cari kode / nama MK..." class="input input-sm input-bordered border-base-300 bg-base-200/50 focus:bg-base-100 pl-9 w-48 xl:w-64 transition-all" />
                 <svg class="w-4 h-4 absolute left-3 top-2.5 text-base-content/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -25,7 +24,7 @@
                 </svg>
                 Tambah Mata Kuliah
             </button>
-        </div>
+        </div> -->
     </section>
 
     <!-- Content Table -->
@@ -38,30 +37,32 @@
                         <th class="font-semibold uppercase tracking-widest text-[11px] w-12">No</th>
                         <th class="font-semibold uppercase tracking-widest text-[11px] w-1/4">Kode Mata Kuliah</th>
                         <th class="font-semibold uppercase tracking-widest text-[11px]">Nama Mata Kuliah</th>
-                        <th class="font-semibold uppercase tracking-widest text-[11px]">Aksi</th>
+                        <!-- <th class="font-semibold uppercase tracking-widest text-[11px]">Aksi</th> -->
                     </tr>
                 </thead>
-                <tbody>
-                    <tr class="hover:bg-base-200/30 transition-colors group">
-                        <td class="text-base-content/50 text-xs font-medium">1</td>
-                        <td>PBW-01</td>
-                        <td> Pemograman Web Lanjut</td>
-                        <td>
-                            <div class="join border border-base-300 shadow-sm rounded-lg opacity-80 group-hover:opacity-100 transition-opacity">
-                                <button class="btn btn-sm btn-ghost join-item px-2 tooltip tooltip-top" data-tip="Edit">
-                                    <svg class="w-4 h-4 text-info" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                                    </svg>
-                                </button>
-                                <button class="btn btn-sm btn-ghost join-item px-2 hover:bg-error/20 hover:text-error tooltip tooltip-top" data-tip="Hapus">
-                                    <svg class="w-4 h-4 text-base-content/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
+        <tbody>
+            @forelse ($matkul as $index => $item)
+                <tr class="hover:bg-base-200/30 transition-colors group">
+                    <td class="text-base-content/50 text-xs font-medium">
+                        {{ $index + 1 }}
+                    </td>
+                    <td>{{ $item['kdmk'] }}</td>
+                    <td>{{ $item['nama'] }}</td>
+                    <!-- <td>
+                        <div class="join border border-base-300 shadow-sm rounded-lg">
+                            <button class="btn btn-sm btn-ghost join-item">Edit</button>
+                            <button class="btn btn-sm btn-ghost join-item text-error">Hapus</button>
+                        </div>
+                    </td> -->
+                </tr>
+            @empty
+                <tr>
+                    <td colspan="4" class="text-center py-4 text-base-content/50">
+                        Data tidak ditemukan
+                    </td>
+                </tr>
+            @endforelse
+        </tbody>
             </table>
         </div>
 
