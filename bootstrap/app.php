@@ -12,8 +12,8 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->alias([
-            'auth.session' => \App\Http\Middleware\CheckSession::class,
-            'guest'        => \App\Http\Middleware\RedirectIfAuthenticated::class,
+            'auth.session' => \App\Http\Middleware\AuthSession::class,
+            'guest.session' => \App\Http\Middleware\GuestSession::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

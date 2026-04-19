@@ -2,7 +2,7 @@
     
     <!-- Brand / Logo -->
     <div class="p-4 flex items-center justify-center border-b border-base-300 bg-base-200/50">
-        <a class="flex items-center gap-2 font-bold text-2xl normal-case hover:opacity-80 transition-opacity" href="{{ route('dashboard') }}">
+        <a class="flex items-center gap-2 font-bold text-2xl normal-case hover:opacity-80 transition-opacity" href="{{ route('master-tutorial') }}">
             <span>Notion<span class="text-primary">App</span></span>
         </a>
     </div>
@@ -14,24 +14,8 @@
             <!-- Title -->
             <li class="menu-title text-sm uppercase tracking-wide font-semibold flex flex-row items-center justify-between mt-2 py-1">
                 Workspace
-                <button class="btn btn-xs btn-ghost btn-circle hover:bg-base-300">
-                    <svg class="w-4 h-4 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
-                    </svg>
-                </button>
             </li>
 
-            <!-- Dashboard -->
-            <!-- <li class="mt-2">
-                <a href="{{ route('dashboard') }}" class="{{ request()->routeIs('dashboard') ? 'bg-primary/10 text-primary border-l-2 border-primary -ml-[1px]' : 'hover:bg-base-300/50 text-base-content/80' }} py-2 text-base flex items-center gap-2 rounded-r-lg transition-colors">
-                    <svg class="w-5 h-5 {{ request()->routeIs('dashboard') ? '' : 'opacity-60' }}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                    </svg>
-                    <span class="{{ request()->routeIs('dashboard') ? 'font-medium' : '' }}">Dashboard</span>
-                </a>
-            </li> -->
-
-                        <!-- Dashboard -->
             <li class="mt-2">
                 <a href="{{ route('master-tutorial') }}" class="{{ request()->routeIs('master-tutorial') ? 'bg-primary/10 text-primary border-l-2 border-primary -ml-[1px]' : 'hover:bg-base-300/50 text-base-content/80' }} py-2 text-base flex items-center gap-2 rounded-r-lg transition-colors">
                     <svg class="w-5 h-5 {{ request()->routeIs('master-tutorial') ? '' : 'opacity-60' }}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -41,7 +25,6 @@
                 </a>
             </li>
 
-                        <!-- Dashboard -->
             <li class="mt-2">
                 <a href="{{ route('mata-kuliah') }}" class="{{ request()->routeIs('mata-kuliah') ? 'bg-primary/10 text-primary border-l-2 border-primary -ml-[1px]' : 'hover:bg-base-300/50 text-base-content/80' }} py-2 text-base flex items-center gap-2 rounded-r-lg transition-colors">
                     <svg class="w-5 h-5 {{ request()->routeIs('mata-kuliah') ? '' : 'opacity-60' }}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -77,17 +60,7 @@
             </li> -->
 
             <div class="divider my-2 px-2 h-0 opacity-50"></div>
-
-            <!-- Trash -->
-            <!-- <li>
-                <a href="{{ route('trash') }}" class="{{ request()->routeIs('trash') ? 'bg-error/10 text-error border-l-2 border-error -ml-[1px]' : 'hover:bg-error/10 hover:text-error text-base-content/70' }} transition-colors py-2 text-base flex items-center gap-2 rounded-r-lg">
-                    <svg class="w-5 h-5 {{ request()->routeIs('trash') ? '' : 'opacity-60' }}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
-                    </svg>
-                    <span class="{{ request()->routeIs('trash') ? 'font-medium' : '' }}">Trash</span>
-                </a>
-            </li> -->
-
+            
         </ul>
     </div>
 

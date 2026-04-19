@@ -1,31 +1,33 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
-Route::get('/', function () {
-    return view('pages.dashboard');
-})->name('dashboard');
 
-Route::get('/master-tutorial', function () {
-    return view('pages.master_tutorial');
-})->name('master-tutorial');
+Route::middleware('guest.session')->group(function () {
+    Route::get('/login', function () {
+        return view('auth.signin');
+    })->name('login');
 
-Route::get('/mata-kuliah', function () {
-    return view('pages.mata_kuliah');
-})->name('mata-kuliah');
+    Route::post('/login', [AuthController::class, 'login'])->name('login.post');
+});
 
-Route::get('/detail-tutorial', function () {
-    return view('pages.detail_tutorial');
-})->name('detail-tutorial');
 
-Route::get('/meeting-notes', function () {
-    return view('pages.meeting_notes');
-})->name('meeting-notes');
+Route::middleware('auth.session')->group(function () {
 
-Route::get('/objectives', function () {
-    return view('pages.objectives');
-})->name('objectives');
+    Route::get('/master_tutorial', function () {
+        return view('pages.master_tutorial');
+    })->name('master-tutorial');
 
-Route::get('/trash', function () {
-    return view('pages.trash');
-})->name('trash');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+    Route::get('/detail-tutorial', function () {
+        return view('pages.detail_tutorial');
+    })->name('detail-tutorial');
+
+    Route::get('/mata-kuliah', function () {
+        return view('pages.mata_kuliah');
+    })->name('mata-kuliah');
+});
+
+Route::redirect('/', '/login');
