@@ -1,5 +1,5 @@
 <aside class="w-64 min-h-screen bg-base-200 text-base-content border-r border-base-300 flex flex-col transition-all duration-300 text-base leading-relaxed" id="sidebar">
-    
+
     <!-- Brand / Logo -->
     <div class="p-4 flex items-center justify-center border-b border-base-300 bg-base-200/50">
         <a class="flex items-center gap-2 font-bold text-2xl normal-case hover:opacity-80 transition-opacity" href="{{ route('master-tutorial') }}">
@@ -49,8 +49,8 @@
                 </div>
 
                 <div class="flex flex-col ml-3 flex-1 text-left overflow-hidden">
-                    <span class="text-base font-semibold truncate">Admin Workspace</span>
-                    <span class="text-xs font-medium text-base-content/50 uppercase tracking-wide mt-0.5">Pro Plan</span>
+                    <span class="text-base font-semibold truncate">{{ session('user_email') }}</span>
+                    {{-- <span class="text-xs font-medium text-base-content/50 uppercase tracking-wide mt-0.5">Pro Plan</span> --}}
                 </div>
 
                 <svg class="w-5 h-5 ml-2 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor">

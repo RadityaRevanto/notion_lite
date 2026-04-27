@@ -35,4 +35,8 @@ return [
         ],
     ],
 
+    'jwt_api' => [
+        'url' => env('JWT_API_URL'),
+    ],
+
 ];
