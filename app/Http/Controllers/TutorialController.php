@@ -33,11 +33,19 @@ class TutorialController extends Controller
 
     public function store(Request $request)
     {
+        do {
+            $presentationUrl = "/presentation/" . Str::random(12);
+        } while (Tutorial::where('presentation_url', $presentationUrl)->exists());
+
+        do {
+            $finishedUrl = "/finished/" . Str::random(12);
+        } while (Tutorial::where('finished_url', $finishedUrl)->exists());
+
         Tutorial::create([
             'judul' => $request->judul,
             'kdmk' => $request->kdmk,
-            'presentation_url' => "/presentation/" . Str::random(12)->unique,
-            'finished_url' => "/finished/" . Str::random(12)->unique,
+            'presentation_url' => $presentationUrl,
+            'finished_url' => $finishedUrl,
             'creator_email' => session('user_email'),
         ]);
 
@@ -47,7 +55,6 @@ class TutorialController extends Controller
     public function destroy($id)
     {
         Tutorial::findOrFail($id)->delete();
-
         return back()->with('success', 'Tutorial berhasil dihapus');
     }
 }

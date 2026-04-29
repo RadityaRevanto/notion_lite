@@ -15,7 +15,7 @@ class PresentationController extends Controller
                         ->get();
         return response()
             ->view('pages.presentation', compact('tutorial', 'details'))
-            ->header('Refresh', '1');
+            ->header('Refresh', '5');
     }
 
     public function finished($token)
