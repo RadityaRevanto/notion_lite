@@ -1,5 +1,4 @@
 <aside class="w-64 min-h-screen bg-base-200 text-base-content border-r border-base-300 flex flex-col transition-all duration-300 text-base leading-relaxed" id="sidebar">
-
     <!-- Brand / Logo -->
     <div class="p-4 flex items-center justify-center border-b border-base-300 bg-base-200/50">
         <a class="flex items-center gap-2 font-bold text-2xl normal-case hover:opacity-80 transition-opacity" href="{{ route('master-tutorial') }}">
