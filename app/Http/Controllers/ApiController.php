@@ -21,7 +21,7 @@ class ApiController extends Controller
 
     public function getTutorialById($id)
     {
-        $tutorial = Tutorial::with('details')->find($id);
+        $tutorial = Tutorial::with('details:id,tutorial_id,type,status,step_order,content,created_at,updated_at')->find($id);
 
         if (!$tutorial) {
             return response()->json([
